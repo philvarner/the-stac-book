@@ -6,6 +6,10 @@ The STAC Book: A Guide for Using STAC and STAC API in Geospatial Software System
   - [Chapter 1: Introduction](#chapter-1-introduction)
     - [Open Catalogs](#open-catalogs)
   - [Chapter 2: STAC Specification](#chapter-2-stac-specification)
+    - [Design Flaws](#design-flaws)
+      - [Coupling STAC to JSON](#coupling-stac-to-json)
+      - [Foreign Members](#foreign-members)
+      - [Assets](#assets)
   - [Chapter 3: STAC API](#chapter-3-stac-api)
   - [Chapter 4: STAC Client Tooling](#chapter-4-stac-client-tooling)
     - [STAC and STAC API Client Libraries](#stac-and-stac-api-client-libraries)
@@ -47,6 +51,33 @@ Earth Search and Planetary Computer
 - STAC Collection
 - STAC Extensions
 - STAC Best Practices
+
+### Design Flaws
+
+#### Coupling STAC to JSON
+
+STAC (no qualifier) should only be an ontology and taxonomy without being coupled to a serialization format (JSON).
+There should be a separate thing "STAC JSON" like there is for "CQL2 JSON" and "CQL2 Text", and then others like
+"STAC GeoParquet" or "STAC Postgres Schema".  
+
+#### Foreign Members
+
+GeoJSON Feature has type, id (optional), geometry (nullable), bbox (optional), and properties.
+Item is a Feature with "foreign members", adding stac_version, stac_extensions, collection, links, and assets.
+making the other Feature fields required or conditionally optional (e.g., geometry or bbox). This could
+have just as easily put these fields in the properties. It's unclear what foreign members are even for, since
+everythign could just go in properties.
+
+Key part here is that the ontology can be the same with a different taxonomy.
+
+#### Assets
+
+The `assets` field is an object instead of an array. Groups of the same type of things (Asset) should
+be lists of them rather than maps. The name should be in the Asset object. This was a mistake of making
+the serialized format the same as the intended usage pattern, e.g., get the asset named `visual_rgb`. In
+practice, the serialized for generally doesn't matter, as most users with either use a formal API (e.g., pystac)
+to interact with the entities, or write their own convenience functions to do so. finding an object in a array by
+property value is not hard, so there's no need to make it a serialized object / map / dict.
 
 ## Chapter 3: STAC API
 
