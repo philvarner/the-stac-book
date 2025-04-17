@@ -4,10 +4,16 @@ The STAC Book: A Guide for Using STAC and STAC API in Geospatial Software System
 
 - [The STAC Book](#the-stac-book)
   - [Chapter 1: Introduction](#chapter-1-introduction)
+    - [Open Catalogs](#open-catalogs)
   - [Chapter 2: STAC Specification](#chapter-2-stac-specification)
   - [Chapter 3: STAC API](#chapter-3-stac-api)
   - [Chapter 4: STAC Client Tooling](#chapter-4-stac-client-tooling)
-    - [STAC API Client Tooling](#stac-api-client-tooling)
+    - [STAC and STAC API Client Libraries](#stac-and-stac-api-client-libraries)
+      - [Python](#python)
+      - [JavaScript / TypeScript](#javascript--typescript)
+      - [Rust](#rust)
+      - [R](#r)
+      - [Julia](#julia)
   - [Chapter 5: STAC Generation Tooling](#chapter-5-stac-generation-tooling)
     - [Creating STAC Items - Use Cases and Examples](#creating-stac-items---use-cases-and-examples)
   - [Chapter 6: STAC API Tooling](#chapter-6-stac-api-tooling)
@@ -24,10 +30,14 @@ The STAC Book: A Guide for Using STAC and STAC API in Geospatial Software System
 
 ## Chapter 1: Introduction
 
+<https://stacspec.org/en>
+
 - Overview of STAC and its purpose
 - Key components of STAC
 - Introduction to STAC API
 - Benefits of using STAC and STAC API
+
+### Open Catalogs
 
 Earth Search and Planetary Computer
 
@@ -46,14 +56,52 @@ Earth Search and Planetary Computer
 
 ## Chapter 4: STAC Client Tooling
 
-### STAC API Client Tooling
+### STAC and STAC API Client Libraries
+
+A more complete list is available at [STAC Index](https://stacindex.org/ecosystem) by language, but many
+of these projects are unmaintained. This list is more curated.
 
 - Querying STAC API
 - Filtering and searching STAC Items
 - Pagination and sorting
 
+#### Python
+
+Python has the best support for STAC of any language.
+
+- [PySTAC](https://pystac.readthedocs.io/) - datamodel, reading STAC from files or URLs, and writing to files
+- [PySTAC Client](https://pystac-client.readthedocs.io/) - STAC API client. Choose this over stacrs unless you need the
+  specific features that stacrs provides.
+- [stacrs](https://github.com/stac-utils/stacrs) - Python bindings for [stac-rs](https://github.com/stac-utils/stac-rs).
+  Can read, write, and search stac-geoparquet, go to and from Arrow tables to interop with tools like GeoPandas, and has
+  async support.
+
+#### JavaScript / TypeScript
+
+JavaScript / TypeScript library support isn't great, even though it's the most common language to build UIs with.
+
+- [stac-js](https://github.com/m-mohr/stac-js) - datamodel and utils for interacting with STAC json
+- [stac-browser](https://github.com/radiantearth/stac-browser) - a UI project, but some STAC API interaction code that can be reused
+- [filmdrop-ui](https://github.com/Element84/filmdrop-ui) - a UI project, but some STAC API interaction code that can be reused
+- [stac-ts](https://github.com/blacha/stac-ts) - TypeScript typings
+
+#### Rust
+
+- [stac-rs](https://github.com/stac-utils/stac-rs) - support for many different STAC formats, overall great package.
+
+#### R
+
+- [rstac](https://github.com/brazil-data-cube/rstac)
+
+#### Julia
+
+- [STAC.jl](https://github.com/JuliaClimate/STAC.jl) - datamodel, reading STAC from files or URLs. As of April 2025, lacking features, but under active development.
 
 ## Chapter 5: STAC Generation Tooling
+
+- PySTAC
+- stacrs/stac-rs
+- [stactools](https://stactools.readthedocs.io/en/stable/) and [stactools-packages](https://stactools-packages.github.io/)
 
 ### Creating STAC Items - Use Cases and Examples
 
