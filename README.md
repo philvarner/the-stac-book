@@ -27,7 +27,6 @@ The STAC Book: A Guide for Using STAC and STAC API in Geospatial Software System
   - [Chapter 10: Integrating STAC with other geospatial tools](#chapter-10-integrating-stac-with-other-geospatial-tools)
   - [Chapter X: Future developments and roadmap](#chapter-x-future-developments-and-roadmap)
 
-
 ## Chapter 1: Introduction
 
 <https://stacspec.org/en>
@@ -121,13 +120,13 @@ Choosing.
 
 Open Source tradeoff -- Maintained vs. forking the code gives a good starting point.
 
-Python
-
-- stac-fastapi - modular backend
+- [stac-fastapi](https://github.com/stac-utils/stac-fastapi) - Python, FastAPI, modular backend
   - [stac-fastapi-pgstac](https://github.com/stac-utils/stac-fastapi-pgstac): [PostgreSQL](https://github.com/postgres/postgres) + [PostGIS](https://github.com/postgis/postgis) via [PgSTAC](https://github.com/stac-utils/pgstac).
   - [stac-fastapi-elasticsearch-opensearch](https://github.com/stac-utils/stac-fastapi-elasticsearch-opensearch): [Elasticsearch](https://github.com/elastic/elasticsearch) or [OpenSearch](https://github.com/opensearch-project/OpenSearch)
-- stac-server - JavaScript , OpenSearch, intended to be run as a lambda
-- resto - PHP, PostgreSQL + PostGIS
+- [stac-server](https://github.com/stac-utils/stac-server) - JavaScript, Express.js OpenSearch, intended to be run as an AWS Lambda, includes example serverless 3.x
+  deploy and included in [filmdrop-aws-tf-modules](https://github.com/Element84/filmdrop-aws-tf-modules) and its
+  example deployment project [goose](https://github.com/Element84/goose)
+- [resto](https://github.com/jjrom/resto) - PHP, PostgreSQL + PostGIS
 
 stac-fastapi-os-es and stac-server use the same format for the storage, so can be interchanged
 
@@ -142,9 +141,8 @@ Abandoned
 
 - Franklin - Scala - PostgreSQL
 - staccato - Java
-- dotnetstac
+- dotnetstac - C# .Net library
 - [stac-fastapi-sqlalchemy](https://github.com/stac-utils/stac-fastapi-sqlalchemy): [PostgreSQL](https://github.com/postgres/postgres) + [PostGIS](https://github.com/postgis/postgis) via [SQLAlchemy](https://www.sqlalchemy.org/) (abandoned in favor of stac-fastapi-pgstac)
-
 
 ### Comparison
 
@@ -189,10 +187,9 @@ Abandoned
 [^2]: stac-server supports IN and BETWEEN, but not LIKE
 [^3]: stac-server supports only GET aggregation endpoints
 
-
 #### Possible implementation
 
-stac-fastapi-pgstac and stac-fastapi-os-es can implement Aggregations. 
+stac-fastapi-pgstac and stac-fastapi-os-es can implement Aggregations.
 
 pgstac h3-pg extension for hex indexing.
 
@@ -217,10 +214,7 @@ Or, pre-calculate the 16 levels of H3 for the centroid of a scene.
 - AWS Redshift
 - Oracle Database  
 
-
 Aggregations - H3 Hexagonal indexing 0-15 levels  
-
-
 
 ## Chapter 8 Advanced Topics in STAC API
 
