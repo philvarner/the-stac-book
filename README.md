@@ -102,6 +102,7 @@ JavaScript / TypeScript library support isn't great, even though it's the most c
 - PySTAC
 - stacrs/stac-rs
 - [stactools](https://stactools.readthedocs.io/en/stable/) and [stactools-packages](https://stactools-packages.github.io/)
+- [antimeridian](https://github.com/gadomski/antimeridian)
 
 ### Creating STAC Items - Use Cases and Examples
 
