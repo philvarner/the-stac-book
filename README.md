@@ -190,16 +190,16 @@ Abandoned
 | Filter - CQL2-JSON                     | ✓                   | ✓                  | ✓            |       |
 | Filter - Basic CQL2                    | ✓                   | ✓                  | ✓            | ✓     |
 | Filter - Advanced Comparison           | ✓                   | ✓                  | partial [^2] | ✓     |
-| Filter - Basic Spatial Functions       |                     |                    | ✓            | ✓     |
-| Filter - Basic Spatial Plus Functions  |                     |                    | ✓            | ✓     |
-| Filter - Spatial Functions             |                     |                    |              |       |
-| Filter - Temporal Functions            |                     |                    |              | ✓     |
-| Filter - Array Functions               |                     |                    |              |       |
-| Filter - Property-Property Comparisons |                     |                    |              |       |
-| Filter - Functions                     |                     |                    |              |       |
-| Filter - Arithmetic Expressions        |                     |                    |              |       |
-| Filter - Case-insensitive Comparison   |                     |                    |              |       |
-| Filter - Accent-insensitive Comparison |                     |                    |              |       |
+| Filter - Basic Spatial Functions       | ✓[^4]               | ✓[^4]              | ✓            | ✓     |
+| Filter - Basic Spatial Plus Functions  | ✓[^4]               | ✓[^4]              | ✓            | ✓     |
+| Filter - Spatial Functions             | ✓                   | ✓                  |              |       |
+| Filter - Temporal Functions            | ✓                   |                    |              | ✓     |
+| Filter - Array Functions               | ✓                   |                    |              |       |
+| Filter - Property-Property Comparisons | ✓                   |                    |              |       |
+| Filter - Functions                     | ✓                   |                    |              |       |
+| Filter - Arithmetic Expressions        | ✓                   |                    |              |       |
+| Filter - Case-insensitive Comparison   | ✓                   |                    |              |       |
+| Filter - Accent-insensitive Comparison | ✓                   |                    |              |       |
 | Sort                                   | ✓                   | ✓                  | ✓            | ✓     |
 | Fields                                 | ✓                   | ✓                  | ✓            | ✓     |
 | Query                                  | ✓                   | ✓                  | ✓            |       |
@@ -207,16 +207,24 @@ Abandoned
 | Collection Transaction                 |                     |                    |              |       |
 | Collection Search                      | ✓                   |                    |              |       |
 | Language (I18N)                        |                     |                    |              |       |
-| Aggregations                           |                     |                    | ✓ [^3]       |       |
+| Aggregations                           |                     | ✓                  | ✓ [^3]       |       |
 | Browseable                             |                     |                    |              | ✓     |
 | Children                               |                     |                    |              | ✓     |
 | Free-Text Search                       | ✓                   |                    |              |       |
+| Queue-based Ingestion                  |                     |                    | ✓            |       |
+| Deployment template                    |                     |                    | ✓            |       |
+|                                        |                     |                    |              |       |
+|                                        |                     |                    |              |       |
+|                                        |                     |                    |              |       |
+|                                        |                     |                    |              |       |
+|                                        |                     |                    |              |       |
 
 - resto only supports GET /search endpoint
 
 [^1]: stac-server does not support create with ItemCollection
 [^2]: stac-server supports IN and BETWEEN, but not LIKE
 [^3]: stac-server supports only GET aggregation endpoints
+[^4]: may not support literal bbox?
 
 #### Possible implementation
 
