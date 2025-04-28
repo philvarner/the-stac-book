@@ -33,7 +33,12 @@ The STAC Book: A Guide for Using STAC and STAC API in Geospatial Software System
 
 ## Chapter 1: Introduction
 
-<https://stacspec.org/en>
+<https://stacspec.org>
+
+- Ontology: object types, vocabulary, and relationships
+- Taxonomy: Catalog and Collections for organizing a hierarchical relationship between related items
+  - related by homogeneous or owner
+- Choreography - STAC API
 
 - Overview of STAC and its purpose
 - Key components of STAC
@@ -83,6 +88,16 @@ property value is not hard, so there's no need to make it a serialized object / 
 
 - Foundational Spec
 - Extensions
+
+Choreography
+
+Hypermedia web API
+
+Navigation from root catalog / landing page via link relations.
+
+conformance classes for advertising functionality -- some are redunant, because they can be discovered via link relations
+
+Filter / CQL2
 
 ## Chapter 4: STAC Client Tooling
 
