@@ -129,10 +129,25 @@ JavaScript / TypeScript library support isn't great, even though it's the most c
 
 ## Chapter 5: STAC Generation Tooling
 
+- stac-factory
 - PySTAC
-- stacrs/stac-rs
-- [stactools](https://stactools.readthedocs.io/en/stable/) and [stactools-packages](https://stactools-packages.github.io/)
-- [antimeridian](https://github.com/gadomski/antimeridian)
+- rustac
+- [stactools](https://stactools.readthedocs.io/en/stable/)
+  - Xml helper tools, since source metadata is commonly in XML
+  - cogify
+  - add_raster_to_item with stats
+  - move assets from source to destination
+  - reprojection utilities, built on shapely?
+  - epsg from utm
+  - affine calculation
+  - raster footprint
+  - data mask
+  - desify polygon and simplify polygon
+  - densify_reproject_simplify
+- [stactools-packages](https://stactools-packages.github.io/) - lots of examples, maybe even for the exact dataset you're converting
+- [antimeridian](https://github.com/gadomski/antimeridian) - fix winding and antimeridian splitting
+
+https://stactools.readthedocs.io/en/stable/footprint.html
 
 ### Creating STAC Items - Use Cases and Examples
 
